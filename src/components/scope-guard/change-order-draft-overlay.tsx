@@ -52,7 +52,7 @@ export function ChangeOrderDraftOverlay(props: {
             <div className="relative grid h-44 w-44 place-items-center">
               <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl" />
               <DotLottieReact
-                src="/assets/Animation%20Loading.lottie"
+                src="/assets/animation-loading.lottie"
                 loop
                 autoplay
                 className="relative h-44 w-44"

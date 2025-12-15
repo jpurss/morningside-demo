@@ -83,6 +83,7 @@ export function ClientCommunication(props: { report: AuditResponse }) {
   const [state, setState] = React.useState<DraftState>({ status: "idle" })
 
   const topIssues = React.useMemo(() => pickTopIssues(props.report), [props.report])
+  const consultation = props.report.overall.consultation ?? undefined
 
   // Use client-facing estimate (includes 1.5x buffer) for communications
   const hours = props.report.overall.clientEstimateHours
@@ -132,15 +133,15 @@ export function ClientCommunication(props: { report: AuditResponse }) {
       const res = await fetch("/api/audit/draft-client-note", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          noteType,
-          overallHeadline: props.report.overall.headline,
-          overallRationale: props.report.overall.rationale,
-          topIssues,
-          estimatedExtraHours: hours,
-          hourlyRateUsd: rate,
-          consultation: props.report.overall.consultation,
-        }),
+      body: JSON.stringify({
+        noteType,
+        overallHeadline: props.report.overall.headline,
+        overallRationale: props.report.overall.rationale,
+        topIssues,
+        estimatedExtraHours: hours,
+        hourlyRateUsd: rate,
+        consultation,
+      }),
       })
       if (!res.ok) {
         const text = await res.text().catch(() => "")

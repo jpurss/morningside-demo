@@ -183,7 +183,7 @@ function EmployeeRow(props: {
 
   const avatarContent = isJosiah ? (
     <img
-      src="/assets/josiah purss.jpeg"
+      src="/assets/josiah-purss.jpeg"
       alt="Josiah Purss"
       className={cn(
         "h-10 w-10 shrink-0 rounded-full object-cover ring-1 ring-foreground/15 transition",

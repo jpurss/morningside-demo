@@ -80,7 +80,7 @@ export function JosiahProfileDialog({ children }: { children: React.ReactNode })
           <DialogHeader className="relative border-none">
             <div className="flex min-w-0 items-start gap-4">
               <img
-                src="/assets/josiah purss.jpeg"
+                src="/assets/josiah-purss.jpeg"
                 alt="Josiah Purss"
                 className="h-16 w-16 shrink-0 rounded-2xl object-cover ring-1 ring-border/60 sm:h-20 sm:w-20"
                 draggable={false}
