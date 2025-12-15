@@ -11,7 +11,7 @@ COPY package.json bun.lock ./
 COPY server/python/requirements.txt ./server/python/
 
 # Install JavaScript dependencies
-RUN bun install --frozen-lockfile
+RUN bun install
 
 # Setup Python environment and install dependencies
 RUN python3 -m venv .venv && \
