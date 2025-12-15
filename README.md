@@ -1,4 +1,4 @@
-# 🛡️ Deal Shield
+# 🛡️ Deal Shield (Demo)
 
 **A comprehensive consultant operations platform for Morningside AI**
 
