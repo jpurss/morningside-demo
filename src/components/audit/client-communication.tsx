@@ -133,15 +133,15 @@ export function ClientCommunication(props: { report: AuditResponse }) {
       const res = await fetch("/api/audit/draft-client-note", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        noteType,
-        overallHeadline: props.report.overall.headline,
-        overallRationale: props.report.overall.rationale,
-        topIssues,
-        estimatedExtraHours: hours,
-        hourlyRateUsd: rate,
-        consultation,
-      }),
+        body: JSON.stringify({
+          noteType,
+          overallHeadline: props.report.overall.headline,
+          overallRationale: props.report.overall.rationale,
+          topIssues,
+          estimatedExtraHours: hours,
+          hourlyRateUsd: rate,
+          consultation,
+        }),
       })
       if (!res.ok) {
         const text = await res.text().catch(() => "")
@@ -156,7 +156,15 @@ export function ClientCommunication(props: { report: AuditResponse }) {
         message: error instanceof Error ? error.message : String(error),
       })
     }
-  }, [hours, noteType, props.report.overall.headline, props.report.overall.rationale, rate, topIssues])
+  }, [
+    consultation,
+    hours,
+    noteType,
+    props.report.overall.headline,
+    props.report.overall.rationale,
+    rate,
+    topIssues,
+  ])
 
   return (
     <div className="rounded-xl border border-border/70 bg-background/20 p-5">
