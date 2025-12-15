@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: morningside-demo
+    runtime: docker
+    region: oregon
+    plan: starter
+    branch: main
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8787
+      - key: OPENROUTER_API_KEY
+        sync: false
+    healthCheckPath: /api/health
+    autoDeploy: true
+
