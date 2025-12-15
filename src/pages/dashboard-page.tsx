@@ -36,6 +36,9 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useToast } from "@/components/ui/toast"
+import { PipelineByStageChart } from "@/components/executive/charts/pipeline-by-stage"
+import { CapacityMixChart } from "@/components/executive/charts/capacity-mix"
+import { AgingRiskChart } from "@/components/executive/charts/aging-risk"
 
 const DASHBOARD_NOW = Date.now()
 
@@ -387,6 +390,11 @@ export function DashboardPage() {
                       <span className="text-xs text-primary/80 pulse-primary">View roster →</span>
                     </CardHeader>
                     <CardContent className="space-y-4">
+                      <CapacityMixChart
+                        over={consultingCapacity.over}
+                        nearBalanced={consultingCapacity.near + consultingCapacity.balanced}
+                        available={consultingCapacity.available}
+                      />
                       <MetricRow
                         label={<span className="text-red-300">Over capacity</span>}
                         emphasized
@@ -439,9 +447,10 @@ export function DashboardPage() {
 
               <Card className="bg-card/60 backdrop-blur-xl">
                 <CardHeader>
-                  <CardTitle className="text-white">Pipeline Breakdown</CardTitle>
+                  <CardTitle className="text-white">Pipeline (by stage)</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
+                  <PipelineByStageChart items={workstreamItems} />
                   <MetricRow
                     label="Scope Guard change orders"
                     value={formatUsd(kpis.pipeline.scopeGuardValue)}
@@ -461,6 +470,15 @@ export function DashboardPage() {
                       emphasized
                     />
                   </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card/60 backdrop-blur-xl">
+                <CardHeader>
+                  <CardTitle className="text-white">Aging Risk</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <AgingRiskChart items={workstreamItems} />
                 </CardContent>
               </Card>
             </div>
