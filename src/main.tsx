@@ -4,7 +4,15 @@ import { createRoot } from "react-dom/client"
 import "./index.css"
 import App from "./App.tsx"
 
-createRoot(document.getElementById("root")!).render(
+document.documentElement.classList.add("dark")
+document.documentElement.style.colorScheme = "dark"
+
+const rootElement = document.getElementById("root")
+if (!rootElement) {
+  throw new Error("Root element not found. Ensure index.html contains <div id=\"root\"></div>")
+}
+
+createRoot(rootElement).render(
   <StrictMode>
     <App />
   </StrictMode>

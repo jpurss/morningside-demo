@@ -1,0 +1,15 @@
+INVENTORY SNAPSHOT - Q4 2024
+============================
+SKU-001: 150
+SKU-002: 87
+SKU-003: 0
+SKU-004: 312
+SKU-005: 45
+SKU-006: 198
+SKU-007: 23
+SKU-008: 0
+SKU-009: 89
+SKU-010: 156
+---
+Total: 1060 units
+Last updated: 2024-12-01

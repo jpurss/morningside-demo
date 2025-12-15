@@ -1,0 +1,44 @@
+MORNINGSIDE PROJECT — STATEMENT OF WORK (DEMO)
+Version: 1.0 (Demo)
+Effective Date: 2025-01-15
+
+1. Overview
+Morningside (“Agency”) will design and build a lightweight internal web application for Client’s operations team.
+This document defines what is included (“In Scope”) and excluded (“Out of Scope”) for the MVP delivery.
+
+2. In Scope — Deliverables
+2.1 Web Application (Core)
+- Authentication with email + password
+- Role-based access control (Admin, Manager, Contributor)
+- Admin dashboard (overview metrics + activity feed)
+- CRUD for “Projects” and “Tasks”
+
+2.2 Reporting
+- Export a project report to PDF format
+- Basic filtering and sorting of report data within the app
+
+2.3 Data Import
+- CSV import of Tasks (upload a CSV to create tasks)
+- Validation for required fields during import
+
+3. Out of Scope — Exclusions
+3.1 Integrations
+- Single Sign-On (SSO) (Okta, Azure AD, Google Workspace)
+- Custom third-party API integrations (e.g., ERP, inventory, accounting systems)
+- Webhooks and real-time event streams
+
+3.2 Reporting Enhancements
+- Export to CSV format is NOT included (PDF export only)
+- Custom report builder or templating
+
+3.3 Platforms & Design
+- Native iOS/Android mobile applications
+- Major visual redesign beyond the agreed UI kit
+
+4. Assumptions
+- Client will provide timely access to required stakeholders and test accounts.
+- Requests for functionality not listed under “In Scope — Deliverables” are treated as change requests.
+
+5. Change Control
+Any request that introduces new functionality, integrations, or deliverables not listed in Section 2
+requires a written change order with updated timeline and budget.

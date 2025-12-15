@@ -1,0 +1,9 @@
+lead_id,company,contact_name,contact_email_redacted,created_date,deal_stage,region,notes
+1001,Arcadia Foods,A. Patel,[redacted],2025-10-02,Qualified,NA,Asked for an AI readiness assessment.
+1002,Northwind Traders,J. Chen,[redacted],2025-10-04,Discovery,EU,Has a single consolidated CRM export.
+1003,Blue Peak Logistics,S. Rivera,[redacted],2025-10-08,Proposal,NA,Wants a small RAG pilot with clean metadata.
+1004,Helios Manufacturing,M. Johnson,[redacted],2025-10-10,Qualified,APAC,Already standardized SKU and supplier IDs.
+1005,Greenfield Health,K. Okafor,[redacted],2025-10-12,Discovery,NA,Needs structured claims summaries (no raw PHI shared).
+1006,Solstice Retail,N. Kim,[redacted],2025-10-15,Proposal,EU,Consistent dates and currency fields in exports.
+1007,Orion Construction,L. Garcia,[redacted],2025-10-18,Qualified,NA,Document set is machine-readable and tagged.
+1008,Everest Utilities,R. Singh,[redacted],2025-10-20,Discovery,APAC,All tables include headers and no unnamed columns.

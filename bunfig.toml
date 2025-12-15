@@ -1,0 +1,5 @@
+# Bun configuration for Deal Shield
+
+[resolve]
+# Map @shared to the shared directory for server-side imports
+alias = { "@shared" = "./shared" }
