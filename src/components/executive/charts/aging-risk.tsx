@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis, type TooltipProps } from "recharts"
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
 
 import { ChartContainer, ChartTooltipFrame, ChartTooltipRow, chartColors } from "@/components/ui/chart"
 import { cn } from "@/lib/utils"
@@ -11,7 +11,7 @@ const STALE_TOP_N = 5
 
 type Bucket = { key: string; label: string; min: number; max: number; count: number }
 
-function AgingTooltipContent(props: TooltipProps<number, string>) {
+function AgingTooltipContent(props: any) {
   const payload = props.payload?.[0]
   const label = props.label as string | undefined
   const count = typeof payload?.value === "number" ? payload.value : null
@@ -34,9 +34,8 @@ function isOpen(item: ExecutiveItem) {
 }
 
 export function AgingRiskChart(props: { items: ExecutiveItem[]; className?: string }) {
-  const now = Date.now()
-
   const computed = React.useMemo(() => {
+    const now = Date.now()
     const open = props.items.filter(isOpen)
 
     const buckets: Bucket[] = [
@@ -80,7 +79,7 @@ export function AgingRiskChart(props: { items: ExecutiveItem[]; className?: stri
       staleOver14Count: staleOver14,
       stalest,
     }
-  }, [now, props.items])
+  }, [props.items])
 
   const hasData = computed.openCount > 0
 
@@ -107,7 +106,7 @@ export function AgingRiskChart(props: { items: ExecutiveItem[]; className?: stri
                 <CartesianGrid vertical={false} />
                 <XAxis dataKey="label" tickLine={false} axisLine={false} fontSize={12} />
                 <YAxis allowDecimals={false} width={18} tickLine={false} axisLine={false} fontSize={12} />
-                <Tooltip content={<AgingTooltipContent />} />
+                <Tooltip content={(p) => <AgingTooltipContent {...p} />} />
                 <Bar dataKey="count" fill={chartColors.chart3} radius={[6, 6, 0, 0]} isAnimationActive />
               </BarChart>
             </ResponsiveContainer>
